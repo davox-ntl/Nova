@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#1E2430">
+  <meta name="description" content="NOVA traduit les langues ivoiriennes en dialogue et en temps réel.">
+  <title>NOVA — Comprenez-vous, partout</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Aller au contenu</a>
+
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Navigation principale">
+      <a class="brand" href="#traduire" data-view-link="translate" aria-label="NOVA, accueil">
+        <img src="/static/assets/nova-mark.webp" alt="" class="brand-mark">
+        <span class="brand-copy"><strong>NOVA</strong><small>Comprenez-vous, partout</small></span>
+      </a>
+
+      <nav class="nav-list">
+        <button class="nav-item is-active" type="button" data-view="translate" aria-current="page">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 5h10M9 3v2m1.5 0c-.7 4-3 6.8-6.5 8.2m2.4-5.3c1.3 2.2 3.2 3.9 5.6 5.1M14 19l3.5-8 3.5 8m-5.6-3h4.2"/></svg>
+          <span>Traduire</span>
+        </button>
+        <button class="nav-item" type="button" data-view="history">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7L3 8m0-5v5h5M12 7v5l3 2"/></svg>
+          <span>Historique</span>
+        </button>
+        <button class="nav-item" type="button" data-view="guide">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 5.5A3.5 3.5 0 0 1 7.5 2H11v17H7.5A3.5 3.5 0 0 0 4 22V5.5Zm16 0A3.5 3.5 0 0 0 16.5 2H13v17h3.5A3.5 3.5 0 0 1 20 22V5.5Z"/></svg>
+          <span>Mode d’emploi</span>
+        </button>
+      </nav>
+
+      <div class="sidebar-card">
+        <span class="status-dot" aria-hidden="true"></span>
+        <div><strong>Prototype MIAGE</strong><small id="engine-status">Moteur en vérification…</small></div>
+      </div>
+      <p class="sidebar-note">Les traductions sensibles doivent être validées par un locuteur natif.</p>
+    </aside>
+
+    <main id="main-content" tabindex="-1">
+      <header class="mobile-header">
+        <a class="brand brand--mobile" href="#traduire" data-view-link="translate">
+          <img src="/static/assets/nova-mark.webp" alt="" class="brand-mark">
+          <span class="brand-copy"><strong>NOVA</strong><small>Comprenez-vous, partout</small></span>
+        </a>
+        <button class="icon-button" id="help-button" type="button" aria-label="Ouvrir le mode d’emploi">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.7 9a2.5 2.5 0 1 1 3.2 2.4c-.9.4-.9 1-.9 1.8M12 17h.01"/></svg>
+        </button>
+      </header>
+
+      <section class="view is-visible" id="view-translate" aria-labelledby="translate-title">
+        <div class="page-heading">
+          <div>
+            <span class="eyebrow"><span></span> Traduction en direct</span>
+            <h1 id="translate-title">Parlez librement.<br><em>NOVA rapproche.</em></h1>
+            <p>Choisissez vos langues, puis écrivez ou utilisez le micro.</p>
+          </div>
+          <button class="ghost-button desktop-only" id="open-onboarding" type="button">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.7 9a2.5 2.5 0 1 1 3.2 2.4c-.9.4-.9 1-.9 1.8M12 17h.01"/></svg>
+            Revoir l’accueil
+          </button>
+        </div>
+
+        <section class="translator-card" aria-label="Outil de traduction">
+          <div class="language-bar">
+            <label class="language-select">
+              <span>Je parle</span>
+              <select id="source-language" aria-label="Langue parlée"></select>
+            </label>
+            <button class="swap-button" id="swap-languages" type="button" aria-label="Inverser les langues">
+              <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m7 7-4 4 4 4M3 11h14M17 17l4-4-4-4M21 13H7"/></svg>
+            </button>
+            <label class="language-select">
+              <span>Je traduis vers</span>
+              <select id="target-language" aria-label="Langue de traduction"></select>
+            </label>
+          </div>
+
+          <div class="context-row" aria-label="Choisir un contexte">
+            <span class="context-label">Contexte</span>
+            <div class="chip-list" role="radiogroup" aria-label="Contexte de la conversation">
+              <button class="context-chip is-active" type="button" role="radio" aria-checked="true" data-context="quotidien">☀️ Quotidien</button>
+              <button class="context-chip" type="button" role="radio" aria-checked="false" data-context="sante">✚ Santé</button>
+              <button class="context-chip" type="button" role="radio" aria-checked="false" data-context="marche">◉ Marché</button>
+              <button class="context-chip" type="button" role="radio" aria-checked="false" data-context="administration">▤ Administration</button>
+            </div>
+          </div>
+
+          <div class="conversation" id="conversation" aria-live="polite">
+            <div class="conversation-empty" id="conversation-empty">
+              <div class="sound-orbit" aria-hidden="true"><span></span><span></span><span></span><b>✦</b></div>
+              <h2>Prêts à vous comprendre ?</h2>
+              <p>Votre conversation apparaîtra ici. NOVA ne remplace pas un interprète professionnel dans les situations critiques.</p>
+            </div>
+          </div>
+
+          <form class="composer" id="translation-form">
+            <label class="sr-only" for="source-text">Votre message</label>
+            <textarea id="source-text" rows="2" maxlength="1200" placeholder="Écrivez votre message ici…" required></textarea>
+            <div class="composer-actions">
+              <span class="character-count"><span id="char-count">0</span>/1200</span>
+              <button class="mic-button" id="mic-button" type="button" aria-label="Dicter le message" aria-pressed="false">
+                <svg aria-hidden="true" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3M9 21h6"/></svg>
+              </button>
+              <button class="primary-button" id="translate-button" type="submit">
+                <span>Traduire</span>
+                <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12 14-7-4 14-3-6-7-1Z"/></svg>
+              </button>
+            </div>
+          </form>
+        </section>
+
+        <div class="trust-row">
+          <span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.6 2.8 8 7 10 4.2-2 7-5.4 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></svg> Conversation privée</span>
+          <span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg> Pensé pour la Côte d’Ivoire</span>
+          <span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6 15a6 6 0 0 1 11.7-1.8A4.5 4.5 0 1 1 18.5 22H7a4 4 0 0 1-1-7Z"/></svg> Mode faible connexion prévu</span>
+        </div>
+      </section>
+
+      <section class="view" id="view-history" aria-labelledby="history-title" hidden>
+        <div class="page-heading page-heading--row">
+          <div><span class="eyebrow"><span></span> Vos échanges</span><h1 id="history-title">Historique</h1><p>Retrouvez les dernières traductions enregistrées sur cet appareil.</p></div>
+          <button class="ghost-button danger" id="clear-history" type="button">Effacer l’historique</button>
+        </div>
+        <div class="history-list" id="history-list" aria-live="polite"></div>
+      </section>
+
+      <section class="view" id="view-guide" aria-labelledby="guide-title" hidden>
+        <div class="page-heading"><div><span class="eyebrow"><span></span> Simple en trois étapes</span><h1 id="guide-title">Mode d’emploi</h1><p>Une interface courte, lisible et adaptée aux usages mobiles.</p></div></div>
+        <div class="guide-grid">
+          <article><span class="step-number">01</span><div class="guide-icon">文</div><h2>Choisissez</h2><p>Sélectionnez votre langue et celle de votre interlocuteur.</p></article>
+          <article><span class="step-number">02</span><div class="guide-icon">◉</div><h2>Parlez ou écrivez</h2><p>Dictez naturellement ou saisissez un message court.</p></article>
+          <article><span class="step-number">03</span><div class="guide-icon">↗</div><h2>Écoutez</h2><p>Lisez le résultat ou lancez la lecture vocale quand elle est disponible.</p></article>
+        </div>
+        <aside class="safety-card"><strong>Important pour la santé et l’administration</strong><p>NOVA aide à communiquer, mais une traduction IA peut contenir des erreurs. Faites confirmer les informations critiques par un interprète ou un professionnel.</p></aside>
+      </section>
+    </main>
+
+    <nav class="bottom-nav" aria-label="Navigation mobile">
+      <button class="is-active" type="button" data-view="translate"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 5h10M9 3v2m1.5 0c-.7 4-3 6.8-6.5 8.2m2.4-5.3c1.3 2.2 3.2 3.9 5.6 5.1M14 19l3.5-8 3.5 8m-5.6-3h4.2"/></svg><span>Traduire</span></button>
+      <button type="button" data-view="history"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7L3 8m0-5v5h5M12 7v5l3 2"/></svg><span>Historique</span></button>
+      <button type="button" data-view="guide"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 5.5A3.5 3.5 0 0 1 7.5 2H11v17H7.5A3.5 3.5 0 0 0 4 22V5.5Zm16 0A3.5 3.5 0 0 0 16.5 2H13v17h3.5A3.5 3.5 0 0 1 20 22V5.5Z"/></svg><span>Guide</span></button>
+    </nav>
+  </div>
+
+  <dialog class="onboarding" id="onboarding-dialog" aria-labelledby="onboarding-title">
+    <button class="dialog-close" id="close-onboarding" type="button" aria-label="Fermer">×</button>
+    <div class="onboarding-visual"><img src="/static/assets/nova-logo.webp" alt="Logo NOVA, portrait argenté entouré d’un réseau rose et bleu"></div>
+    <div class="onboarding-content">
+      <span class="eyebrow"><span></span> Bienvenue sur NOVA</span>
+      <h2 id="onboarding-title">Comprenez-vous,<br><em>partout.</em></h2>
+      <p>Une aide à la conversation pensée pour rapprocher les personnes qui ne parlent pas la même langue.</p>
+      <ol class="onboarding-steps">
+        <li><b>1</b><span><strong>Choisissez deux langues</strong><small>La vôtre et celle de votre interlocuteur.</small></span></li>
+        <li><b>2</b><span><strong>Parlez ou écrivez</strong><small>Le parcours reste court, même sur mobile.</small></span></li>
+        <li><b>3</b><span><strong>Écoutez et vérifiez</strong><small>Confirmez toujours les informations sensibles.</small></span></li>
+      </ol>
+      <button class="primary-button primary-button--wide" id="start-nova" type="button">Commencer <span aria-hidden="true">→</span></button>
+      <small class="consent-note">En continuant, vous acceptez l’usage local de l’historique de démonstration.</small>
+    </div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="/static/app.js" defer></script>
+</body>
+</html>
