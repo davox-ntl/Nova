@@ -34,7 +34,15 @@ CREATE TABLE IF NOT EXISTS feedback (
 
 
 def database_path() -> Path:
-    path = Path(os.getenv("NOVA_DB_PATH", str(DEFAULT_DB)))
+    configured = os.getenv("NOVA_DB_PATH", "").strip()
+    if configured:
+        path = Path(configured)
+    elif os.getenv("VERCEL"):
+        # The deployed filesystem is read-only: /tmp is the only writable area.
+        # Data does not survive a cold start; use a hosted DB for persistence.
+        path = Path("/tmp/nova.db")
+    else:
+        path = DEFAULT_DB
     path.parent.mkdir(parents=True, exist_ok=True)
     return path
 

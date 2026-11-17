@@ -6,4 +6,6 @@ __pycache__/
 .ruff_cache/
 data/*.db
 data/*.db-*
+data/index_de_langue/*.pdf
+data/index_de_langue/.cache/
 .DS_Store

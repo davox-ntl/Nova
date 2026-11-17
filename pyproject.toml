@@ -2,7 +2,10 @@
 name = "nova-ci"
 version = "0.1.0"
 description = "MVP web de traduction des langues ivoiriennes"
-requires-python = ">=3.11"
+requires-python = ">=3.12"
+
+[tool.vercel]
+entrypoint = "app.main:app"
 
 [tool.ruff]
 line-length = 100

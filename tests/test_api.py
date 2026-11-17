@@ -207,6 +207,13 @@ class NovaApiTests(unittest.TestCase):
         self.assertEqual(mocked_communicate.call_args.kwargs["rate"], "-12%")
         self.assertEqual(mocked_communicate.call_args.kwargs["volume"], "-5%")
 
+    def test_vercel_uses_writable_tmp_database(self) -> None:
+        from app import database
+
+        with patch.dict(os.environ, {"VERCEL": "1"}):
+            os.environ.pop("NOVA_DB_PATH", None)
+            self.assertEqual(database.database_path(), Path("/tmp/nova.db"))
+
     def test_legacy_database_gets_phonetic_column(self) -> None:
         from app import database
 
