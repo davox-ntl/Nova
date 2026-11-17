@@ -4,13 +4,15 @@ from __future__ import annotations
 from contextlib import asynccontextmanager
 from pathlib import Path
 
+import edge_tts
 from dotenv import load_dotenv
-from fastapi import FastAPI, HTTPException, Query
+from fastapi import FastAPI, HTTPException, Query, Response
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
 from . import database
+from .services.language_index import available_indexes
 from .services.translator import (
     LANGUAGES,
     provider_is_configured,
@@ -22,6 +24,35 @@ from .services.translator import (
 load_dotenv()
 
 STATIC_DIR = Path(__file__).parent / "static"
+
+# Neural voices served by edge-tts. The first one is the soft, soothing default
+# used instead of the browser's default (often metallic) system voice.
+DEFAULT_VOICE = "fr-FR-VivienneNeural"
+VOICES = [
+    {
+        "id": DEFAULT_VOICE,
+        "name": "Douce et apaisante",
+        "description": "Voix féminine douce et calme",
+        "rate": "-12%",
+        "volume": "-5%",
+    },
+    {
+        "id": "fr-FR-DeniseNeural",
+        "name": "Claire et naturelle",
+        "description": "Voix féminine claire",
+        "rate": "-8%",
+        "volume": "-5%",
+    },
+    {
+        "id": "fr-FR-HenriNeural",
+        "name": "Posée",
+        "description": "Voix masculine posée",
+        "rate": "-10%",
+        "volume": "-5%",
+    },
+]
+VOICE_SETTINGS = {voice["id"]: voice for voice in VOICES}
+VOICE_IDS = set(VOICE_SETTINGS)
 
 
 @asynccontextmanager
@@ -61,6 +92,8 @@ def health() -> dict:
         "provider": provider,
         "model": provider_model(provider),
         "translation_engine": provider if configured else "demo-local",
+        "tts_engine": "edge-tts",
+        "reference_indexes": available_indexes(),
     }
 
 
@@ -89,8 +122,10 @@ def create_translation(payload: TranslationRequest) -> dict:
         result.text,
         payload.context,
         result.engine,
+        result.phonetic,
     )
     saved["warning"] = result.warning
+    saved["references"] = result.references
     return saved
 
 
@@ -110,6 +145,50 @@ def feedback(payload: FeedbackRequest) -> dict:
         return database.save_feedback(payload.translation_id, payload.helpful, payload.comment)
     except ValueError as exc:
         raise HTTPException(status_code=404, detail=str(exc)) from exc
+
+
+@app.get("/api/voices")
+def voices() -> list[dict]:
+    return [{**voice, "default": voice["id"] == DEFAULT_VOICE} for voice in VOICES]
+
+
+@app.get("/api/tts")
+async def text_to_speech(
+    text: str = Query(min_length=1, max_length=1200),
+    voice: str = Query(default=DEFAULT_VOICE),
+) -> Response:
+    if voice not in VOICE_IDS:
+        raise HTTPException(status_code=422, detail="Voix non prise en charge")
+    settings = VOICE_SETTINGS[voice]
+    clean_text = " ".join(text.split())
+    try:
+        # Neural Edge TTS voices, slowed down slightly for a soft, soothing delivery.
+        communicate = edge_tts.Communicate(
+            clean_text,
+            voice,
+            rate=settings["rate"],
+            volume=settings["volume"],
+        )
+        audio_data = b""
+        async for chunk in communicate.stream():
+            if chunk["type"] == "audio":
+                audio_data += chunk["data"]
+        if not audio_data:
+            raise RuntimeError("aucun audio produit")
+        return Response(
+            content=audio_data,
+            media_type="audio/mpeg",
+            headers={
+                "Cache-Control": "public, max-age=3600",
+                "X-TTS-Engine": "edge-tts",
+                "X-TTS-Voice": voice,
+            },
+        )
+    except Exception as exc:
+        raise HTTPException(
+            status_code=502,
+            detail=f"Edge TTS indisponible : {exc}",
+        ) from exc
 
 
 app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")

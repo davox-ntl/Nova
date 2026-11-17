@@ -1,0 +1,127 @@
+{
+  "language": "bci",
+  "name": "Baoulé",
+  "notes": "Transcription syllabique simplifiée ; toutes les syllabes du baoulé sont ouvertes (terminées par une voyelle orale ou nasale).",
+  "entries": [
+    {
+      "mot": "yasua",
+      "phonetic": "ya-soua",
+      "fr": "garçon / homme / mâle"
+    },
+    {
+      "mot": "bla",
+      "phonetic": "bla",
+      "fr": "fille / femme / femelle"
+    },
+    {
+      "mot": "ba",
+      "phonetic": "ba",
+      "fr": "enfant"
+    },
+    {
+      "mot": "sran",
+      "phonetic": "sran",
+      "fr": "homme"
+    },
+    {
+      "mot": "sran mun",
+      "phonetic": "sran moun",
+      "fr": "hommes (pluriel)"
+    },
+    {
+      "mot": "fluwa",
+      "phonetic": "flou-a",
+      "fr": "papier"
+    },
+    {
+      "mot": "se",
+      "phonetic": "sé",
+      "fr": "dire"
+    },
+    {
+      "mot": "nsan",
+      "phonetic": "n-san",
+      "fr": "trois"
+    },
+    {
+      "mot": "gba",
+      "phonetic": "gba",
+      "fr": "piège"
+    },
+    {
+      "mot": "kale",
+      "phonetic": "ka-lé",
+      "fr": "crédit"
+    },
+    {
+      "mot": "kpe",
+      "phonetic": "kpé",
+      "fr": "couper"
+    },
+    {
+      "mot": "la",
+      "phonetic": "la",
+      "fr": "coucher"
+    },
+    {
+      "mot": "panndu",
+      "phonetic": "pann-dou",
+      "fr": "bouteille"
+    },
+    {
+      "mot": "nza",
+      "phonetic": "n-za",
+      "fr": "igname"
+    },
+    {
+      "mot": "fen",
+      "phonetic": "fèn",
+      "fr": "écoper de l'eau"
+    },
+    {
+      "mot": "tin",
+      "phonetic": "tin",
+      "fr": "écraser"
+    },
+    {
+      "mot": "tuun",
+      "phonetic": "tou-un",
+      "fr": "sombre"
+    },
+    {
+      "mot": "ta",
+      "phonetic": "ta",
+      "fr": "planter"
+    },
+    {
+      "mot": "be",
+      "phonetic": "bé",
+      "fr": "cuire"
+    },
+    {
+      "mot": "fe",
+      "phonetic": "fé",
+      "fr": "fatiguer"
+    },
+    {
+      "mot": "to",
+      "phonetic": "to",
+      "fr": "acheter"
+    },
+    {
+      "mot": "bu",
+      "phonetic": "bou",
+      "fr": "casser"
+    },
+    {
+      "mot": "nym",
+      "phonetic": "gnim",
+      "fr": "grandir / fermer"
+    },
+    {
+      "mot": "yi",
+      "phonetic": "yi",
+      "fr": "épouse"
+    }
+  ]
+}

@@ -16,6 +16,7 @@ CREATE TABLE IF NOT EXISTS translations (
     target_language TEXT NOT NULL,
     source_text TEXT NOT NULL,
     translated_text TEXT NOT NULL,
+    phonetic TEXT NOT NULL DEFAULT '',
     context TEXT NOT NULL DEFAULT 'quotidien',
     engine TEXT NOT NULL,
     created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
@@ -45,6 +46,10 @@ def connect() -> Iterator[sqlite3.Connection]:
     connection.execute("PRAGMA foreign_keys = ON")
     # Idempotent: recreates the schema if a fresh database file appears while the app runs.
     connection.executescript(SCHEMA)
+    # Databases created before phonetics was added need the column as well.
+    columns = {row[1] for row in connection.execute("PRAGMA table_info(translations)")}
+    if "phonetic" not in columns:
+        connection.execute("ALTER TABLE translations ADD COLUMN phonetic TEXT NOT NULL DEFAULT ''")
     try:
         yield connection
         connection.commit()
@@ -64,16 +69,25 @@ def save_translation(
     translated_text: str,
     context: str,
     engine: str,
+    phonetic: str = "",
 ) -> dict:
     with connect() as db:
         cursor = db.execute(
             """
             INSERT INTO translations (
                 source_language, target_language, source_text,
-                translated_text, context, engine
-            ) VALUES (?, ?, ?, ?, ?, ?)
+                translated_text, context, engine, phonetic
+            ) VALUES (?, ?, ?, ?, ?, ?, ?)
             """,
-            (source_language, target_language, source_text, translated_text, context, engine),
+            (
+                source_language,
+                target_language,
+                source_text,
+                translated_text,
+                context,
+                engine,
+                phonetic,
+            ),
         )
         row = db.execute(
             "SELECT * FROM translations WHERE id = ?", (cursor.lastrowid,)

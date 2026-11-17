@@ -1,0 +1,24 @@
+{
+  "language": "bet",
+  "name": "Bété",
+  "source": "Parlons bété — aperçu (l'extrait disponible est surtout linguistique)",
+  "notes": "Le bété est une langue à tons, non notés dans cette transcription simplifiée. Privilégier le dialecte de Daloa pour les traductions.",
+  "rules": [
+    {
+      "graphie": "dialecte de référence",
+      "son": "celui de Daloa (triangle Daloa-Issia-Saïoua)"
+    },
+    {
+      "graphie": "famille",
+      "son": "langue kru (avec Nyabwa, Kouzié, Bakwé, Godié, Dida)"
+    },
+    {
+      "graphie": "parlers",
+      "son": "Gbadi, Nekedi, Zedi (axe Soubré-Gagnoa-Ouragahio) et parlers de l'axe Daloa-Issia"
+    },
+    {
+      "graphie": "orthographe",
+      "son": "alphabet latin ; lire chaque syllabe distinctement, voyelles bien ouvertes"
+    }
+  ]
+}

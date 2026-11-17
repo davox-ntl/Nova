@@ -1,0 +1,56 @@
+{
+  "language": "bci",
+  "name": "Baoulé",
+  "source": "Parlons baoulé — Kouadio N'Guessan & Kouamé (chapitre « La langue baoulé »)",
+  "notes": "Règles extraites du chapitre de phonologie de « Parlons baoulé ». Pas d'opposition grammaticale masculin/féminin : la distinction est celle du sexe.",
+  "rules": [
+    {
+      "graphie": "a / e / ɛ / i / o / ɔ / u",
+      "son": "7 voyelles orales ; e et ɛ proches de « été » et « père »"
+    },
+    {
+      "graphie": "an / ɛn / on",
+      "son": "voyelles nasales comme dans « chant », « pain », « bon »"
+    },
+    {
+      "graphie": "in / un",
+      "son": "pronnoncés i / ou avec la voix nasalisée (« en parlant du nez »)"
+    },
+    {
+      "graphie": "j",
+      "son": "comme le j de « diamant », « diète » (souvent noté dj)"
+    },
+    {
+      "graphie": "gb",
+      "son": "son double articulé, prononcé en même temps à l'arrière et à l'avant"
+    },
+    {
+      "graphie": "kp",
+      "son": "comme gb mais sans vibration des cordes vocales"
+    },
+    {
+      "graphie": "r",
+      "son": "r battu, plus proche du l français"
+    },
+    {
+      "graphie": "c",
+      "son": "comme le tch de « tiers »"
+    },
+    {
+      "graphie": "w",
+      "son": "comme dans « ouate », « ouest »"
+    },
+    {
+      "graphie": "y",
+      "son": "comme dans « yaourt », « cahier »"
+    },
+    {
+      "graphie": "ny",
+      "son": "comme le gn de « agnat »"
+    },
+    {
+      "graphie": "mun",
+      "son": "marque du pluriel, ajoutée après le nom"
+    }
+  ]
+}

@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#1E2430">
   <meta name="description" content="NOVA traduit les langues ivoiriennes en dialogue et en temps réel.">
   <title>NOVA — Comprenez-vous, partout</title>
-  <link rel="stylesheet" href="/static/styles.css">
+  <link rel="stylesheet" href="/static/styles.css?v=2">
 </head>
 <body>
   <a class="skip-link" href="#main-content">Aller au contenu</a>
@@ -89,6 +89,11 @@
             </div>
           </div>
 
+          <div class="voice-row">
+            <label class="voice-label" for="voice-select">Voix Edge TTS</label>
+            <select id="voice-select" aria-label="Voix de lecture"></select>
+          </div>
+
           <div class="conversation" id="conversation" aria-live="polite">
             <div class="conversation-empty" id="conversation-empty">
               <div class="sound-orbit" aria-hidden="true"><span></span><span></span><span></span><b>✦</b></div>
@@ -133,7 +138,7 @@
         <div class="guide-grid">
           <article><span class="step-number">01</span><div class="guide-icon">文</div><h2>Choisissez</h2><p>Sélectionnez votre langue et celle de votre interlocuteur.</p></article>
           <article><span class="step-number">02</span><div class="guide-icon">◉</div><h2>Parlez ou écrivez</h2><p>Dictez naturellement ou saisissez un message court.</p></article>
-          <article><span class="step-number">03</span><div class="guide-icon">↗</div><h2>Écoutez</h2><p>Lisez le résultat ou lancez la lecture vocale quand elle est disponible.</p></article>
+          <article><span class="step-number">03</span><div class="guide-icon">↗</div><h2>Écoutez</h2><p>La prononciation s’affiche sous la traduction. Lancez la lecture vocale pour l’entendre avec une voix douce.</p></article>
         </div>
         <aside class="safety-card"><strong>Important pour la santé et l’administration</strong><p>NOVA aide à communiquer, mais une traduction IA peut contenir des erreurs. Faites confirmer les informations critiques par un interprète ou un professionnel.</p></aside>
       </section>
@@ -164,6 +169,6 @@
   </dialog>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  <script src="/static/app.js" defer></script>
+  <script src="/static/app.js?v=2" defer></script>
 </body>
 </html>

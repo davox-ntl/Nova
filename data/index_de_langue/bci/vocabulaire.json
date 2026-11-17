@@ -1,0 +1,151 @@
+{
+  "language": "bci",
+  "name": "Baoulé",
+  "source": "Parlons baoulé — Kouadio N'Guessan & Kouamé (chapitre « La langue baoulé »)",
+  "entries": [
+    {
+      "fr": "garçon / homme / mâle",
+      "translation": "yasua",
+      "phonetic": "ya-soua",
+      "context": "quotidien"
+    },
+    {
+      "fr": "fille / femme / femelle",
+      "translation": "bla",
+      "phonetic": "bla",
+      "context": "quotidien"
+    },
+    {
+      "fr": "enfant",
+      "translation": "ba",
+      "phonetic": "ba",
+      "context": "quotidien"
+    },
+    {
+      "fr": "homme",
+      "translation": "sran",
+      "phonetic": "sran",
+      "context": "quotidien"
+    },
+    {
+      "fr": "hommes (pluriel)",
+      "translation": "sran mun",
+      "phonetic": "sran moun",
+      "context": "grammaire"
+    },
+    {
+      "fr": "papier",
+      "translation": "fluwa",
+      "phonetic": "flou-a",
+      "context": "quotidien"
+    },
+    {
+      "fr": "dire",
+      "translation": "se",
+      "phonetic": "sé",
+      "context": "quotidien"
+    },
+    {
+      "fr": "trois",
+      "translation": "nsan",
+      "phonetic": "n-san",
+      "context": "nombre"
+    },
+    {
+      "fr": "piège",
+      "translation": "gba",
+      "phonetic": "gba",
+      "context": "quotidien"
+    },
+    {
+      "fr": "crédit",
+      "translation": "kale",
+      "phonetic": "ka-lé",
+      "context": "marché"
+    },
+    {
+      "fr": "couper",
+      "translation": "kpe",
+      "phonetic": "kpé",
+      "context": "quotidien"
+    },
+    {
+      "fr": "coucher",
+      "translation": "la",
+      "phonetic": "la",
+      "context": "quotidien"
+    },
+    {
+      "fr": "bouteille",
+      "translation": "panndu",
+      "phonetic": "pann-dou",
+      "context": "quotidien"
+    },
+    {
+      "fr": "igname",
+      "translation": "nza",
+      "phonetic": "n-za",
+      "context": "marché"
+    },
+    {
+      "fr": "écoper de l'eau",
+      "translation": "fen",
+      "phonetic": "fèn",
+      "context": "quotidien"
+    },
+    {
+      "fr": "écraser",
+      "translation": "tin",
+      "phonetic": "tin",
+      "context": "quotidien"
+    },
+    {
+      "fr": "sombre",
+      "translation": "tuun",
+      "phonetic": "tou-un",
+      "context": "quotidien"
+    },
+    {
+      "fr": "planter",
+      "translation": "ta",
+      "phonetic": "ta",
+      "context": "quotidien"
+    },
+    {
+      "fr": "cuire",
+      "translation": "be",
+      "phonetic": "bé",
+      "context": "quotidien"
+    },
+    {
+      "fr": "fatiguer",
+      "translation": "fe",
+      "phonetic": "fé",
+      "context": "quotidien"
+    },
+    {
+      "fr": "acheter",
+      "translation": "to",
+      "phonetic": "to",
+      "context": "marché"
+    },
+    {
+      "fr": "casser",
+      "translation": "bu",
+      "phonetic": "bou",
+      "context": "quotidien"
+    },
+    {
+      "fr": "grandir / fermer",
+      "translation": "nym",
+      "phonetic": "gnim",
+      "context": "quotidien"
+    },
+    {
+      "fr": "épouse",
+      "translation": "yi",
+      "phonetic": "yi",
+      "context": "quotidien"
+    }
+  ]
+}

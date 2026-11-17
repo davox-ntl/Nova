@@ -1,0 +1,112 @@
+{
+  "language": "dyu",
+  "name": "Dioula",
+  "notes": "Transcription simplifiée en lettres latines pour un lecteur francophone. Chaque syllabe est ouverte : elle se termine par une voyelle.",
+  "entries": [
+    {
+      "mot": "i ni sɔgɔma",
+      "phonetic": "i ni so-goma",
+      "fr": "bonjour (matin)"
+    },
+    {
+      "mot": "i ni tile",
+      "phonetic": "i ni ti-le",
+      "fr": "bonjour (journée)"
+    },
+    {
+      "mot": "i ni ce",
+      "phonetic": "i ni tche",
+      "fr": "salut"
+    },
+    {
+      "mot": "hɛɛrɛ sira",
+      "phonetic": "hɛ-hɛ sira",
+      "fr": "comment ça va ?"
+    },
+    {
+      "mot": "i ni ce / abarika",
+      "phonetic": "i ni tche / a-ba-ri-ka",
+      "fr": "merci"
+    },
+    {
+      "mot": "awɔ",
+      "phonetic": "a-wɔ",
+      "fr": "oui"
+    },
+    {
+      "mot": "sanbɛsanb ɲuman",
+      "phonetic": "san-bɛ-sanb ɲu-man",
+      "fr": "bonne nuit"
+    },
+    {
+      "mot": "ji",
+      "phonetic": "dji",
+      "fr": "eau"
+    },
+    {
+      "mot": "minniji",
+      "phonetic": "min-ni-dji",
+      "fr": "eau à boire"
+    },
+    {
+      "mot": "wari",
+      "phonetic": "wa-ri",
+      "fr": "argent"
+    },
+    {
+      "mot": "dumu",
+      "phonetic": "du-mu",
+      "fr": "manger"
+    },
+    {
+      "mot": "taga / wa",
+      "phonetic": "ta-ga / wa",
+      "fr": "aller"
+    },
+    {
+      "mot": "ji",
+      "phonetic": "dji",
+      "fr": "boire"
+    },
+    {
+      "mot": "ɲuman",
+      "phonetic": "ɲu-man",
+      "fr": "bon / beau"
+    },
+    {
+      "mot": "diman",
+      "phonetic": "di-man",
+      "fr": "bon (au goût)"
+    },
+    {
+      "mot": "bana",
+      "phonetic": "ba-na",
+      "fr": "maladie"
+    },
+    {
+      "mot": "sɔngɔ",
+      "phonetic": "sɔn-gɔ",
+      "fr": "prix"
+    },
+    {
+      "mot": "cɛ",
+      "phonetic": "tchɛ",
+      "fr": "homme"
+    },
+    {
+      "mot": "muso",
+      "phonetic": "mu-so",
+      "fr": "femme"
+    },
+    {
+      "mot": "den",
+      "phonetic": "den",
+      "fr": "enfant"
+    },
+    {
+      "mot": "cogo / cogo di",
+      "phonetic": "co-go di",
+      "fr": "comment"
+    }
+  ]
+}

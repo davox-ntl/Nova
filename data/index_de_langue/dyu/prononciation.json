@@ -1,0 +1,44 @@
+{
+  "language": "dyu",
+  "name": "Dioula",
+  "source": "Index-dioula-francais.pdf — Urs Niggli",
+  "notes": "Orthographe dioula (alphabet latin) issue de l'index de référence. Les tons ne sont pas notés dans la transcription simplifiée.",
+  "rules": [
+    {
+      "graphie": "ɛ",
+      "son": "è court, comme dans « père »"
+    },
+    {
+      "graphie": "ɔ",
+      "son": "o ouvert, comme dans « porte »"
+    },
+    {
+      "graphie": "ɲ",
+      "son": "gn, comme dans « agneau »"
+    },
+    {
+      "graphie": "ŋ",
+      "son": "ng nasal, comme dans « parking »"
+    },
+    {
+      "graphie": "c",
+      "son": "tch, comme dans « tchat »"
+    },
+    {
+      "graphie": "j",
+      "son": "dj, comme dans « diamant »"
+    },
+    {
+      "graphie": "gb",
+      "son": "gb prononcé des deux lèvres en même temps"
+    },
+    {
+      "graphie": "h",
+      "son": "h aspiré, bien audible"
+    },
+    {
+      "graphie": "an / en / in / on",
+      "son": "voyelles nasales comme en français (an, in, bon)"
+    }
+  ]
+}

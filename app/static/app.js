@@ -1,5 +1,7 @@
 const state = {
   languages: [],
+  voices: [],
+  voice: null,
   context: 'quotidien',
   recognition: null,
   listening: false,
@@ -9,6 +11,7 @@ const $ = (selector, root = document) => root.querySelector(selector);
 const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
 const sourceSelect = $('#source-language');
 const targetSelect = $('#target-language');
+const voiceSelect = $('#voice-select');
 const sourceText = $('#source-text');
 const form = $('#translation-form');
 const conversation = $('#conversation');
@@ -68,6 +71,22 @@ function updateLanguagePreferences() {
   localStorage.setItem('nova-target', targetSelect.value);
 }
 
+function populateVoices() {
+  voiceSelect.replaceChildren();
+  state.voices.forEach((voice) => {
+    const option = document.createElement('option');
+    option.value = voice.id;
+    option.textContent = voice.name;
+    voiceSelect.append(option);
+  });
+  const saved = localStorage.getItem('nova-voice');
+  state.voice = state.voices.find((voice) => voice.id === saved)?.id
+    || state.voices.find((voice) => voice.default)?.id
+    || state.voices[0]?.id
+    || null;
+  if (state.voice) voiceSelect.value = state.voice;
+}
+
 function iconButton(label, symbol, handler) {
   const button = document.createElement('button');
   button.type = 'button';
@@ -77,7 +96,7 @@ function iconButton(label, symbol, handler) {
   return button;
 }
 
-function appendMessage(kind, text, language, translationId = null) {
+function appendMessage(kind, text, language, translationId = null, phonetic = '', references = []) {
   emptyConversation?.remove();
   const article = document.createElement('article');
   article.className = `message message--${kind}`;
@@ -85,10 +104,24 @@ function appendMessage(kind, text, language, translationId = null) {
   const meta = document.createElement('div');
   meta.className = 'message-meta';
   meta.textContent = kind === 'source' ? `Vous · ${language}` : `NOVA · ${language}`;
+  if (references.length) {
+    const badge = document.createElement('span');
+    badge.className = 'index-badge';
+    badge.textContent = `📖 ${references.length} extrait(s) d’index`;
+    badge.title = references.map((item) => `${item.file} p. ${item.page}`).join('\n');
+    meta.append(badge);
+  }
 
   const bubble = document.createElement('div');
   bubble.className = 'bubble';
   bubble.textContent = text;
+
+  if (phonetic) {
+    const pronunciation = document.createElement('p');
+    pronunciation.className = 'phonetic';
+    pronunciation.textContent = `Prononciation : ${phonetic}`;
+    bubble.after(pronunciation);
+  }
 
   const actions = document.createElement('div');
   actions.className = 'message-actions';
@@ -145,16 +178,61 @@ async function sendFeedback(translationId, helpful) {
   }
 }
 
-function speak(text, code) {
+let audioPlayer = null;
+
+function softBrowserVoice(lang) {
+  const voices = window.speechSynthesis?.getVoices() || [];
+  const sameLanguage = voices.filter((voice) => voice.lang.toLowerCase().startsWith(lang.slice(0, 2)));
+  const preferred = ['vivienne', 'denise', 'français', 'french', 'natural'];
+  for (const name of preferred) {
+    const match = sameLanguage.find((voice) => voice.name.toLowerCase().includes(name));
+    if (match) return match;
+  }
+  return sameLanguage[0] || null;
+}
+
+function speakWithBrowser(text, code) {
   if (!('speechSynthesis' in window)) {
     showToast('La lecture vocale n’est pas disponible sur ce navigateur.');
     return;
   }
   window.speechSynthesis.cancel();
   const utterance = new SpeechSynthesisUtterance(text);
-  utterance.lang = state.languages.find((language) => language.code === code)?.speech || 'fr-FR';
-  utterance.rate = 0.95;
+  const lang = state.languages.find((language) => language.code === code)?.speech || 'fr-FR';
+  utterance.lang = lang;
+  utterance.voice = softBrowserVoice(lang);
+  utterance.rate = 0.9;
+  utterance.pitch = 1;
   window.speechSynthesis.speak(utterance);
+}
+
+async function speak(text, code) {
+  if (!text) return;
+  if (audioPlayer) {
+    audioPlayer.pause();
+    audioPlayer = null;
+  }
+  const voice = state.voice || 'fr-FR-VivienneNeural';
+  const voiceName = state.voices.find((item) => item.id === voice)?.name || 'voix douce';
+  try {
+    const params = new URLSearchParams({ text, voice });
+    const response = await fetch(`/api/tts?${params.toString()}`);
+    if (!response.ok) {
+      const detail = await response.json().catch(() => ({}));
+      throw new Error(detail.detail || `HTTP ${response.status}`);
+    }
+    const blob = await response.blob();
+    const url = URL.createObjectURL(blob);
+    const player = new Audio(url);
+    player.onended = () => URL.revokeObjectURL(url);
+    audioPlayer = player;
+    await player.play();
+    showToast(`Lecture Edge TTS · ${voiceName}`);
+  } catch (error) {
+    // Le repli est annoncé : l'utilisateur sait s'il n'écoute pas la voix neuronale.
+    showToast(`Edge TTS indisponible (${error.message}). Voix système utilisée.`);
+    speakWithBrowser(text, code);
+  }
 }
 
 async function translateMessage(event) {
@@ -184,7 +262,14 @@ async function translateMessage(event) {
       }),
     });
     $('#typing-indicator')?.remove();
-    appendMessage('target', result.translated_text, languageName(result.target_language), result.id);
+    appendMessage(
+      'target',
+      result.translated_text,
+      languageName(result.target_language),
+      result.id,
+      result.phonetic,
+      result.references || [],
+    );
     if (result.warning) appendWarning(result.warning);
     sourceText.value = '';
     $('#char-count').textContent = '0';
@@ -246,9 +331,17 @@ async function loadHistory() {
       source.textContent = entry.source_text;
       const arrow = document.createElement('span');
       arrow.textContent = '→';
+      const targetColumn = document.createElement('div');
       const target = document.createElement('p');
       target.textContent = entry.translated_text;
-      pair.append(source, arrow, target);
+      targetColumn.append(target);
+      if (entry.phonetic) {
+        const pronunciation = document.createElement('p');
+        pronunciation.className = 'phonetic';
+        pronunciation.textContent = `Prononciation : ${entry.phonetic}`;
+        targetColumn.append(pronunciation);
+      }
+      pair.append(source, arrow, targetColumn);
       card.append(top, pair);
       list.append(card);
     });
@@ -297,14 +390,18 @@ function toggleListening() {
 
 async function initialise() {
   try {
-    [state.languages] = await Promise.all([
+    const [languages, , voices] = await Promise.all([
       api('/api/languages'),
       api('/api/health').then((health) => {
         const labels = { nvidia: 'DeepSeek via NVIDIA actif', deepseek: 'Moteur DeepSeek actif', gemini: 'Moteur Gemini actif' };
         $('#engine-status').textContent = labels[health.translation_engine] || 'Mode démonstration local';
       }),
+      api('/api/voices'),
     ]);
+    state.languages = languages;
+    state.voices = voices;
     populateLanguages();
+    populateVoices();
   } catch (error) {
     showToast(`Connexion au serveur impossible : ${error.message}`);
   }
@@ -322,6 +419,10 @@ sourceText.addEventListener('keydown', (event) => {
 });
 sourceSelect.addEventListener('change', updateLanguagePreferences);
 targetSelect.addEventListener('change', updateLanguagePreferences);
+voiceSelect.addEventListener('change', () => {
+  state.voice = voiceSelect.value;
+  localStorage.setItem('nova-voice', state.voice);
+});
 $('#swap-languages').addEventListener('click', () => {
   const current = sourceSelect.value;
   sourceSelect.value = targetSelect.value;

@@ -1,0 +1,87 @@
+{
+  "language": "any",
+  "name": "Agni",
+  "notes": "L'ouvrage utilise l'alphabet latin avec la graphie du français ; la transcription ci-dessous découpe les mots en syllabes lisibles.",
+  "entries": [
+    {
+      "mot": "n’zwé",
+      "phonetic": "n-zwé",
+      "fr": "eau"
+    },
+    {
+      "mot": "gwa",
+      "phonetic": "gwa",
+      "fr": "prix"
+    },
+    {
+      "mot": "awonïalé",
+      "phonetic": "a-wo-nï-a-lé",
+      "fr": "maladie"
+    },
+    {
+      "mot": "ïo",
+      "phonetic": "ï-o",
+      "fr": "oui"
+    },
+    {
+      "mot": "tchètchè",
+      "phonetic": "tchè-tchè",
+      "fr": "non"
+    },
+    {
+      "mot": "basoua",
+      "phonetic": "ba-soua",
+      "fr": "femme"
+    },
+    {
+      "mot": "ba / batouman",
+      "phonetic": "ba / ba-tou-man",
+      "fr": "enfant"
+    },
+    {
+      "mot": "ïè té wonou",
+      "phonetic": "ïè té wo-nou",
+      "fr": "à bientôt"
+    },
+    {
+      "mot": "afouè kpa",
+      "phonetic": "a-fouè kpa",
+      "fr": "bonne année !"
+    },
+    {
+      "mot": "amïangouan",
+      "phonetic": "a-mïan-gouan",
+      "fr": "ami"
+    },
+    {
+      "mot": "ésika",
+      "phonetic": "é-si-ka",
+      "fr": "argent (monnaie)"
+    },
+    {
+      "mot": "bakaa",
+      "phonetic": "ba-kaa",
+      "fr": "arbre"
+    },
+    {
+      "mot": "matésé",
+      "phonetic": "ma-té-sé",
+      "fr": "allumette"
+    },
+    {
+      "mot": "gnangoman",
+      "phonetic": "gnan-go-man",
+      "fr": "ananas"
+    },
+    {
+      "mot": "afouè",
+      "phonetic": "a-fouè",
+      "fr": "année"
+    },
+    {
+      "mot": "tchinzé",
+      "phonetic": "tchin-zé",
+      "fr": "assiette"
+    }
+  ]
+}

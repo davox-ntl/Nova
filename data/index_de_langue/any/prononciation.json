@@ -1,0 +1,40 @@
+{
+  "language": "any",
+  "name": "Agni",
+  "source": "Introduction à la langue agni — Louis de Gouyon Matignon (lexique français-agni)",
+  "notes": "Règles de phonétique extraites du chapitre « Phonétique » de l'ouvrage. L'agni est une langue à tons ; les tons ne sont pas notés ici.",
+  "rules": [
+    {
+      "graphie": "voyelles",
+      "son": "se prononcent comme en français"
+    },
+    {
+      "graphie": "an (ex. toféman)",
+      "son": "comme « ant » de « maintenant »"
+    },
+    {
+      "graphie": "ï (ex. anoïé, ïè)",
+      "son": "comme le ï de « païen » ou « monoï »"
+    },
+    {
+      "graphie": "consonnes",
+      "son": "son dur, à l'allemande"
+    },
+    {
+      "graphie": "apostrophe (ex. n’gémo)",
+      "son": "allonge et durcit la lettre précédente : « nn-gémo »"
+    },
+    {
+      "graphie": "a’nwué",
+      "son": "se prononce « aa-nwué »"
+    },
+    {
+      "graphie": "dj (ex. djadé)",
+      "son": "comme le j de « John »"
+    },
+    {
+      "graphie": "w (ex. waté)",
+      "son": "comme le w de « whisky »"
+    }
+  ]
+}

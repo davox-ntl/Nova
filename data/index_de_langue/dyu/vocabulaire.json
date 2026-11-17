@@ -1,0 +1,133 @@
+{
+  "language": "dyu",
+  "name": "Dioula",
+  "source": "Index-dioula-francais.pdf — Urs Niggli",
+  "entries": [
+    {
+      "fr": "bonjour (matin)",
+      "translation": "i ni sɔgɔma",
+      "phonetic": "i ni so-goma",
+      "context": "salutation"
+    },
+    {
+      "fr": "bonjour (journée)",
+      "translation": "i ni tile",
+      "phonetic": "i ni ti-le",
+      "context": "salutation"
+    },
+    {
+      "fr": "salut",
+      "translation": "i ni ce",
+      "phonetic": "i ni tche",
+      "context": "salutation"
+    },
+    {
+      "fr": "comment ça va ?",
+      "translation": "hɛɛrɛ sira",
+      "phonetic": "hɛ-hɛ sira",
+      "context": "salutation"
+    },
+    {
+      "fr": "merci",
+      "translation": "i ni ce / abarika",
+      "phonetic": "i ni tche / a-ba-ri-ka",
+      "context": "politesse"
+    },
+    {
+      "fr": "oui",
+      "translation": "awɔ",
+      "phonetic": "a-wɔ",
+      "context": "politesse"
+    },
+    {
+      "fr": "bonne nuit",
+      "translation": "sanbɛsanb ɲuman",
+      "phonetic": "san-bɛ-sanb ɲu-man",
+      "context": "salutation"
+    },
+    {
+      "fr": "eau",
+      "translation": "ji",
+      "phonetic": "dji",
+      "context": "quotidien"
+    },
+    {
+      "fr": "eau à boire",
+      "translation": "minniji",
+      "phonetic": "min-ni-dji",
+      "context": "quotidien"
+    },
+    {
+      "fr": "argent",
+      "translation": "wari",
+      "phonetic": "wa-ri",
+      "context": "marché"
+    },
+    {
+      "fr": "manger",
+      "translation": "dumu",
+      "phonetic": "du-mu",
+      "context": "quotidien"
+    },
+    {
+      "fr": "aller",
+      "translation": "taga / wa",
+      "phonetic": "ta-ga / wa",
+      "context": "quotidien"
+    },
+    {
+      "fr": "boire",
+      "translation": "ji",
+      "phonetic": "dji",
+      "context": "quotidien"
+    },
+    {
+      "fr": "bon / beau",
+      "translation": "ɲuman",
+      "phonetic": "ɲu-man",
+      "context": "quotidien"
+    },
+    {
+      "fr": "bon (au goût)",
+      "translation": "diman",
+      "phonetic": "di-man",
+      "context": "quotidien"
+    },
+    {
+      "fr": "maladie",
+      "translation": "bana",
+      "phonetic": "ba-na",
+      "context": "santé"
+    },
+    {
+      "fr": "prix",
+      "translation": "sɔngɔ",
+      "phonetic": "sɔn-gɔ",
+      "context": "marché"
+    },
+    {
+      "fr": "homme",
+      "translation": "cɛ",
+      "phonetic": "tchɛ",
+      "context": "quotidien"
+    },
+    {
+      "fr": "femme",
+      "translation": "muso",
+      "phonetic": "mu-so",
+      "context": "quotidien"
+    },
+    {
+      "fr": "enfant",
+      "translation": "den",
+      "phonetic": "den",
+      "context": "quotidien"
+    },
+    {
+      "fr": "comment",
+      "translation": "cogo / cogo di",
+      "phonetic": "co-go di",
+      "context": "quotidien"
+    }
+  ]
+}

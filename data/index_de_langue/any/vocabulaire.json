@@ -1,0 +1,103 @@
+{
+  "language": "any",
+  "name": "Agni",
+  "source": "Introduction à la langue agni — Louis de Gouyon Matignon (lexique français-agni)",
+  "entries": [
+    {
+      "fr": "eau",
+      "translation": "n’zwé",
+      "phonetic": "n-zwé",
+      "context": "quotidien"
+    },
+    {
+      "fr": "prix",
+      "translation": "gwa",
+      "phonetic": "gwa",
+      "context": "marché"
+    },
+    {
+      "fr": "maladie",
+      "translation": "awonïalé",
+      "phonetic": "a-wo-nï-a-lé",
+      "context": "santé"
+    },
+    {
+      "fr": "oui",
+      "translation": "ïo",
+      "phonetic": "ï-o",
+      "context": "politesse"
+    },
+    {
+      "fr": "non",
+      "translation": "tchètchè",
+      "phonetic": "tchè-tchè",
+      "context": "politesse"
+    },
+    {
+      "fr": "femme",
+      "translation": "basoua",
+      "phonetic": "ba-soua",
+      "context": "quotidien"
+    },
+    {
+      "fr": "enfant",
+      "translation": "ba / batouman",
+      "phonetic": "ba / ba-tou-man",
+      "context": "quotidien"
+    },
+    {
+      "fr": "à bientôt",
+      "translation": "ïè té wonou",
+      "phonetic": "ïè té wo-nou",
+      "context": "salutation"
+    },
+    {
+      "fr": "bonne année !",
+      "translation": "afouè kpa",
+      "phonetic": "a-fouè kpa",
+      "context": "salutation"
+    },
+    {
+      "fr": "ami",
+      "translation": "amïangouan",
+      "phonetic": "a-mïan-gouan",
+      "context": "quotidien"
+    },
+    {
+      "fr": "argent (monnaie)",
+      "translation": "ésika",
+      "phonetic": "é-si-ka",
+      "context": "marché"
+    },
+    {
+      "fr": "arbre",
+      "translation": "bakaa",
+      "phonetic": "ba-kaa",
+      "context": "quotidien"
+    },
+    {
+      "fr": "allumette",
+      "translation": "matésé",
+      "phonetic": "ma-té-sé",
+      "context": "quotidien"
+    },
+    {
+      "fr": "ananas",
+      "translation": "gnangoman",
+      "phonetic": "gnan-go-man",
+      "context": "marché"
+    },
+    {
+      "fr": "année",
+      "translation": "afouè",
+      "phonetic": "a-fouè",
+      "context": "quotidien"
+    },
+    {
+      "fr": "assiette",
+      "translation": "tchinzé",
+      "phonetic": "tchin-zé",
+      "context": "quotidien"
+    }
+  ]
+}

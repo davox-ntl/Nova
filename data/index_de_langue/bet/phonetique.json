@@ -1,0 +1,67 @@
+{
+  "language": "bet",
+  "name": "Bété",
+  "notes": "L'extrait de « Parlons bété » disponible ne contient pas de lexique français-bété : les entrées ci-dessous sont des noms propres et dialectes avec une transcription lisible. Ne pas inventer d'équivalents bété absents de l'index.",
+  "entries": [
+    {
+      "mot": "Daloa",
+      "phonetic": "da-lo-a",
+      "fr": "Daloa"
+    },
+    {
+      "mot": "Soubré",
+      "phonetic": "sou-bré",
+      "fr": "Soubré"
+    },
+    {
+      "mot": "Gagnoa",
+      "phonetic": "ga-gno-a",
+      "fr": "Gagnoa"
+    },
+    {
+      "mot": "Ouragahio",
+      "phonetic": "ou-ra-ga-hio",
+      "fr": "Ouragahio"
+    },
+    {
+      "mot": "Guibéroua",
+      "phonetic": "gui-bé-rou-a",
+      "fr": "Guibéroua"
+    },
+    {
+      "mot": "Issia",
+      "phonetic": "is-sia",
+      "fr": "Issia"
+    },
+    {
+      "mot": "Saïoua",
+      "phonetic": "sa-ï-oua",
+      "fr": "Saïoua"
+    },
+    {
+      "mot": "Nyabwa",
+      "phonetic": "gnia-bwa",
+      "fr": "Nyabwa"
+    },
+    {
+      "mot": "Kouzié",
+      "phonetic": "kou-zié",
+      "fr": "Kouzié"
+    },
+    {
+      "mot": "Gbadi",
+      "phonetic": "gba-di",
+      "fr": "Gbadi"
+    },
+    {
+      "mot": "Nekedi",
+      "phonetic": "né-ké-di",
+      "fr": "Nekedi"
+    },
+    {
+      "mot": "Zedi",
+      "phonetic": "zé-di",
+      "fr": "Zedi"
+    }
+  ]
+}

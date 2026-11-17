@@ -1,0 +1,79 @@
+{
+  "language": "bet",
+  "name": "Bété",
+  "source": "Parlons bété — aperçu (l'extrait disponible est surtout linguistique)",
+  "entries": [
+    {
+      "fr": "Daloa",
+      "translation": "Daloa",
+      "phonetic": "da-lo-a",
+      "context": "geographie"
+    },
+    {
+      "fr": "Soubré",
+      "translation": "Soubré",
+      "phonetic": "sou-bré",
+      "context": "geographie"
+    },
+    {
+      "fr": "Gagnoa",
+      "translation": "Gagnoa",
+      "phonetic": "ga-gno-a",
+      "context": "geographie"
+    },
+    {
+      "fr": "Ouragahio",
+      "translation": "Ouragahio",
+      "phonetic": "ou-ra-ga-hio",
+      "context": "geographie"
+    },
+    {
+      "fr": "Guibéroua",
+      "translation": "Guibéroua",
+      "phonetic": "gui-bé-rou-a",
+      "context": "geographie"
+    },
+    {
+      "fr": "Issia",
+      "translation": "Issia",
+      "phonetic": "is-sia",
+      "context": "geographie"
+    },
+    {
+      "fr": "Saïoua",
+      "translation": "Saïoua",
+      "phonetic": "sa-ï-oua",
+      "context": "geographie"
+    },
+    {
+      "fr": "Nyabwa",
+      "translation": "Nyabwa",
+      "phonetic": "gnia-bwa",
+      "context": "geographie"
+    },
+    {
+      "fr": "Kouzié",
+      "translation": "Kouzié",
+      "phonetic": "kou-zié",
+      "context": "geographie"
+    },
+    {
+      "fr": "Gbadi",
+      "translation": "Gbadi",
+      "phonetic": "gba-di",
+      "context": "dialecte"
+    },
+    {
+      "fr": "Nekedi",
+      "translation": "Nekedi",
+      "phonetic": "né-ké-di",
+      "context": "dialecte"
+    },
+    {
+      "fr": "Zedi",
+      "translation": "Zedi",
+      "phonetic": "zé-di",
+      "context": "dialecte"
+    }
+  ]
+}
